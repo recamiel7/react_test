@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 class CreateContent extends Component{
     render(){
+      console.log('create render');
       return (
         <article>
           <h2>Create</h2>  
@@ -11,7 +12,6 @@ class CreateContent extends Component{
               e.target.title.value,
               e.target.desc.value
             );
-            alert('submit!!')
           }.bind(this)}>
             <p><input type="text" name="title" placeholder="title"></input></p>
             <p><textarea name ="desc" placeholder="description"></textarea></p>
