@@ -6,6 +6,7 @@ import CreateContent from "./components/CreateContent"
 import UpdateContent from "./components/UpdateContent"
 import Subject from"./components/Subject"
 import Control from"./components/Control"
+import ScrollBox from"./components/ScrollBox"
 
 class App extends Component {
   constructor(props){
@@ -80,6 +81,7 @@ class App extends Component {
 
   render(){ 
     console.log('App render');
+    
     return(
      <div className="App">
       <Subject 
@@ -126,6 +128,10 @@ class App extends Component {
         }
       }.bind(this)}></Control>  
       {this.getContent()}
+      <ScrollBox ref={(ref)=>this.ScrollBox=ref}></ScrollBox>
+      <button onClick={() => this.ScrollBox.scrollToBottom()}>
+        맨 밑으로
+      </button>
     </div>
    );
   }
